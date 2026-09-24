@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="C:\Users\mohit computers\Desktop\Welora\8aae9025-c8f1-4b41-8587-c29a51cd011d.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">VELORA</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Collections</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div style="display:flex; gap:20px; align-items:center;">
+                <div class="cart" onclick="openCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <small>New Collection 2026</small>
+
+            <h1>Wear Your Story.</h1>
+
+            <p>
+                Discover timeless clothing designed for people who
+                believe style is more than just what you wear.
+            </p>
+
+            <a href="#shop" class="btn">SHOP COLLECTION</a>
+        </div>
+    </section>
+
+
+    <section id="categories">
+        <div class="container">
+
+            <div class="section-title">
+                <small>Explore</small>
+                <h2>Shop By Category</h2>
+            </div>
+
+            <div class="categories">
+
+                <div class="category">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80">
+                    <div class="category-overlay">
+                        <h3>Women</h3>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=80">
+                    <div class="category-overlay">
+                        <h3>Men</h3>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=900&q=80">
+                    <div class="category-overlay">
+                        <h3>Accessories</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" style="background:#f1efec;">
+        <div class="container">
+
+            <div class="section-title">
+                <small>Our Collection</small>
+                <h2>Featured Products</h2>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all', this)">
+                    All
+                </button>
+
+                <button class="filter-btn" onclick="filterProducts('women', this)">
+                    Women
+                </button>
+
+                <button class="filter-btn" onclick="filterProducts('men', this)">
+                    Men
+                </button>
+
+                <button class="filter-btn" onclick="filterProducts('accessories', this)">
+                    Accessories
+                </button>
+            </div>
+
+            <div class="products" id="products">
+
+                <div class="product" data-category="women">
+                    <div class="product-image">
+                        <span class="sale">NEW</span>
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Minimal Linen Dress</h3>
+                        <p>Women's Collection</p>
+                        <div class="price">$89</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Minimal Linen Dress', 89)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Classic Overshirt</h3>
+                        <p>Men's Collection</p>
+                        <div class="price">$79</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Classic Overshirt', 79)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="women">
+                    <div class="product-image">
+                        <span class="sale">SALE</span>
+                        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Everyday Blazer</h3>
+                        <p>Women's Collection</p>
+
+                        <div class="price">
+                            $99
+                            <span class="old-price">$129</span>
+                        </div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Everyday Blazer', 99)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Relaxed Cotton Shirt</h3>
+                        <p>Men's Collection</p>
+
+                        <div class="price">$59</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Relaxed Cotton Shirt', 59)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Leather Handbag</h3>
+                        <p>Accessories</p>
+
+                        <div class="price">$119</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Leather Handbag', 119)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Classic Sunglasses</h3>
+                        <p>Accessories</p>
+
+                        <div class="price">$49</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Classic Sunglasses', 49)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="women">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Modern Street Jacket</h3>
+                        <p>Women's Collection</p>
+
+                        <div class="price">$109</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Modern Street Jacket', 109)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product" data-category="men">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Premium Knit Sweater</h3>
+                        <p>Men's Collection</p>
+
+                        <div class="price">$85</div>
+
+                        <button class="add-cart"
+                            onclick="addToCart('Premium Knit Sweater', 85)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85">
+                </div>
+
+                <div class="about-text">
+                    <small>Our Philosophy</small>
+
+                    <h2>Simple. Timeless. You.</h2>
+
+                    <p>
+                        VELORA was created with one simple idea:
+                        clothing should feel as good as it looks.
+                    </p>
+
+                    <p>
+                        We create modern essentials using thoughtful
+                        designs, comfortable fabrics and timeless
+                        silhouettes that are made to stay in your
+                        wardrobe for years.
+                    </p>
+
+                    <a href="#contact" class="btn">LEARN MORE</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="newsletter">
+        <div class="container">
+
+            <h2>Join The VELORA Club</h2>
+
+            <p>
+                Get early access to new collections and exclusive offers.
+            </p>
+
+            <form class="newsletter-form" onsubmit="subscribe(event)">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email address"
+                    required
+                >
+
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+
+        </div>
+    </section>
+
+
+    <footer id="contact">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-logo">VELORA</div>
+
+                <p>
+                    Modern clothing for modern lives.
+                    Designed with simplicity, confidence
+                    and individuality in mind.
+                </p>
+            </div>
+
+            <div>
+                <h4>Shop</h4>
+
+                <ul>
+                    <li>Women</li>
+                    <li>Men</li>
+                    <li>Accessories</li>
+                    <li>New Arrivals</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Help</h4>
+
+                <ul>
+                    <li>Shipping</li>
+                    <li>Returns</li>
+                    <li>Size Guide</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow</h4>
+
+                <ul>
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                    <li>TikTok</li>
+                    <li>Pinterest</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 VELORA. All rights reserved.
+        </div>
+
+    </footer>
+
+
+
+    <div class="cart-panel" id="cartPanel">
+
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+
+            <button class="close-cart" onclick="closeCart()">
+                ×
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p style="color:#777;">
+                Your cart is empty.
+            </p>
+        </div>
+
+        <div class="cart-total">
+            Total: $<span id="cartTotal">0</span>
+        </div>
+
+        <button class="checkout" onclick="checkout()">
+            CHECKOUT
+        </button>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
